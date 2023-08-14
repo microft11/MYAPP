@@ -219,18 +219,21 @@ class Settings {
     }
 
     logout_on_remote() {
-        if (this.platform === "ACAPP") return false;
+        if (this.platform === "ACAPP") {
+            this.root.AcWindowsOS.api.window.close();
+        } else {
 
-        $.ajax({
-            url: "https://app5669.acapp.acwing.com.cn/settings/logout/",
-            type: "GET",
-            success: function(resp) {
-                console.log(resp);
-                if (resp.result === "success") {
-                    location.reload();
-                }
-            }
-        });
+            $.ajax({
+                url: "https://app5669.acapp.acwing.com.cn/settings/logout/",
+                 type: "GET",
+                 success: function(resp) {
+                        console.log(resp);
+                     if (resp.result === "success") {
+                         location.reload();
+                       }
+                  }
+             });
+        }
     }
 
 
