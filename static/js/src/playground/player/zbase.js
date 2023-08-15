@@ -15,7 +15,7 @@ class Player extends AcGameObject {
         this.color = color;
         this.speed = speed;
         this.character = character;
-        this.username = username;
+        this.username = username;:
         this.photo = photo;
         this.eps = 0.01;
         this.friction = 0.9;
